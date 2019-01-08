@@ -13,16 +13,16 @@ import { MessageService } from "../message.service";
 export class CrisisService {
   constructor(private messageService: MessageService) {}
 
-  getCrisises(): Observable<Crisis[]> {
-    // TODO: send the message _after_ fetching the crisises
-    this.messageService.add("CrisisService: fetched Crisises");
+  getCrises(): Observable<Crisis[]> {
+    // TODO: send the message _after_ fetching the crises
+    this.messageService.add("CrisisService: fetched Crises");
     return of(CRISESES);
   }
 
   getCrisis(id: number | string) {
-    return this.getCrisises().pipe(
+    return this.getCrises().pipe(
       // (+) before `id` turns the string into a number
-      map((crisises: Crisis[]) => crisises.find(crisis => crisis.id === +id))
+      map((crises: Crisis[]) => crises.find(crisis => crisis.id === +id))
     );
   }
 }

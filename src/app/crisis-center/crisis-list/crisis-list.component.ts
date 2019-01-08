@@ -13,17 +13,17 @@ import { switchMap } from "rxjs/operators";
   styleUrls: ["./crisis-list.component.scss"]
 })
 export class CrisisListComponent implements OnInit {
-  crisises$: Observable<Crisis[]>;
+  crises$: Observable<Crisis[]>;
   selectedId: number;
 
   constructor(private service: CrisisService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.crisises$ = this.route.paramMap.pipe(
+    this.crises$ = this.route.paramMap.pipe(
       switchMap(params => {
         // (+) before `params.get()` turns the string into a number
         this.selectedId = +params.get("id");
-        return this.service.getCrisises();
+        return this.service.getCrises();
       })
     );
   }

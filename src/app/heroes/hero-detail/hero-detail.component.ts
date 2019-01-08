@@ -31,6 +31,6 @@ export class HeroDetailComponent implements OnInit {
     let heroId = hero ? hero.id : null;
     // Pass along the hero id if available
     // so that the HeroList component can select that hero.n.
-    this.router.navigate(["/heroes", { id: heroId}]);
+    this.router.navigate(["/superheroes", { id: heroId}]);
   }
 }

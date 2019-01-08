@@ -4,7 +4,7 @@ import { Observable, of } from "rxjs";
 import { map } from "rxjs/operators";
 
 import { Crisis } from "./crisis";
-import { CRISESES } from "./mock-crisis";
+import { CRISES } from "./mock-crisis";
 import { MessageService } from "../message.service";
 
 @Injectable({
@@ -16,7 +16,7 @@ export class CrisisService {
   getCrises(): Observable<Crisis[]> {
     // TODO: send the message _after_ fetching the crises
     this.messageService.add("CrisisService: fetched Crises");
-    return of(CRISESES);
+    return of(CRISES);
   }
 
   getCrisis(id: number | string) {

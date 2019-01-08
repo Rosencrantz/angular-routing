@@ -14,13 +14,10 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
  
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { AdminComponent } from './admin/admin.component';
-import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
-import { ManageCrisisesComponent } from './admin/manage-crisises/manage-crisises.component';
-import { ManageHeroesComponent } from './admin/manage-heroes/manage-heroes.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent, ComposeMessageComponent, AdminComponent, AdminDashboardComponent, ManageCrisisesComponent, ManageHeroesComponent],
+  declarations: [AppComponent, PageNotFoundComponent, ComposeMessageComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -28,6 +25,7 @@ import { ManageHeroesComponent } from './admin/manage-heroes/manage-heroes.compo
     BrowserAnimationsModule,
     HeroesModule,
     CrisisCenterModule,
+    AdminModule,
     AppRoutingModule
   ],
   providers: [],
